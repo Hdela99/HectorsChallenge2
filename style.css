@@ -44,12 +44,12 @@ nav{
     background-color: Black;
     width:100%;
 }
-nav h1 {
+nav h1 { /*specific to just the name portion of navigation area */
     float:left;
     margin: 0x 5px;
 }
 
-nav  li {
+nav  li {/*ignores the nav h1 element above and allows spacing of the 3 links */
     list-style-type: none;
     display: inline-block;
     margin:0px 5px;
@@ -58,23 +58,22 @@ nav  li {
     justify-content:space-evenly;
 }
 
-a {
+nav li a { /*only way I could get the text color to be the white and not underlineed */
     text-decoration: none;
     color: white;
 }
 
-nav ul {
+nav ul { /*only way I could figure out how to assure the 3 links stayed on right of webpage*/
     float: right;
 }
 
 #Portfolio {
-    display: flex;
-    flex-wrap: wrap;
+    display: flex; /*Allows for the title to be separate from the images without wrapping into title area */
     background-color:paleturquoise;
 }
 
 #ProjectHolder {
-    width: 1000px;
+    width: 100%;
     flex: 4;
     flex-wrap: wrap;
     background-color:paleturquoise;
@@ -86,8 +85,12 @@ nav ul {
 }
 #Holder1 {
     
-    width: 800px;
-    height: 600px;
+    width: 100%;
+    height: auto;
+}
+#ProjectHolder a {
+    color:black;
+    text-align:center;
 }
 
 #TITLE {
@@ -111,9 +114,6 @@ nav ul {
     padding-right: 75px;
     height:100%
 }
-#Anon2 {
-    
-}
 
 header {
     display: flex;
@@ -124,22 +124,12 @@ header {
     background-color: paleturquoise;
     line-height: 1.3;
     font-family: Menlo, monospace;
-
-    /* display:flex;
-    flex-wrap: wrap;
-    justify-content:flex-start;
-    grid-template-columns: repeat(2, 1fr);
-    background-color:paleturquoise;
-    grid-gap:10px;
-    padding:10px;
-    width: 100%;
-    max-height:fit-content; */
 }
 #Side2 {
     float:left;
     border-right: solid 5px black;
     margin-right: 4px;
-    padding-right: 75px;
+    padding-right: 3%;
 }
 
 #Contact {
@@ -155,5 +145,64 @@ header {
     grid-row: 1 / 2;
     list-style-type:none;
     padding:50px;
+    flex-wrap:wrap;
 
   }
+  @media screen and (max-width: 1024px) {
+    main,
+    nav {
+        display: flex;
+      flex-direction: column;
+    }
+  */
+    #Contact{
+        display:flex;
+        flex-direction:column;
+    }
+    #Col1 {
+        width:auto;
+    }
+    #ProjectHolder #Holder1 {
+        display:flex;
+        width:100%;
+        height:auto;
+    }
+    #Side2 {
+        padding-right:12px;
+    }
+    #Anon {
+        padding-right:48px;
+    }
+  }
+
+  @media screen and (max-width: 812px) {
+    main,
+    nav {
+        display: flex;
+      flex-direction: column;
+    }
+    #ProjectHolder {
+        display:flex;
+        flex-direction:column;
+    }
+    #Contact{
+        display:flex;
+        flex-direction:column;
+    }
+    #Col1 {
+        width:auto;
+    }
+    #ProjectHolder #Holder1 {
+        display:flex;
+        width:100%;
+        height:auto;
+        margin-bottom:5px;
+    }
+    #Side2 {
+        padding-right:12px;
+    }
+    #Anon {
+        padding-right:48px;
+    }
+  }
+  
